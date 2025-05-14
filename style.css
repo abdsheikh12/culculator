@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.culcul {
+    width: 100%;
+    height: 100vh;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.culculator {
+    width: 100%;
+    max-width: 400px; /* یہاں زیادہ چوڑائی نہیں دی */
+    height: 400px;
+    background-color: #1C1C1C;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.culculator form input {
+    width: 50px;
+    margin: 5px;
+    height: 50px;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 1px white;
+    border: none;
+    background-color: transparent;
+    user-select: none;
+    color: white;
+}
+
+.culculator form {
+    display: flex;
+    flex-wrap: wrap;  /* بٹنز کو نئی لائن پر لے آنے کے لیے */
+    justify-content: center;  /* بٹنز کو سینٹر میں لانے کے لیے */
+    align-items: center;  /* بٹنز کو عمودی طور پر سینٹر کرنے کے لیے */
+    margin: 10px auto;
+}
+
+#inp {
+    display: flex;
+    justify-content: end;
+}
+
+#input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+    padding-right: 20px;  /* رائٹ سائیڈ پر 20px کی پڈنگ */
+    box-shadow: none;
+    user-select: none;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" href="Calculator_512.webp" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="culcul">
+        <div class="culculator">
+
+            <form>
+                <div id="inp">
+                    <input type="text" id="input" readonly style="width: 100%; text-align: end;">
+                </div>
+                <div>
+                    <input type="button" value="AC" onclick="finish()" >
+                    <input type="button" value="Del" onclick="deleteLast()">
+                    <input type="button" value="." onclick="addToInput('.')">
+                    <input type="button" value="/" onclick="addToInput('/')">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="addToInput('7')">
+                    <input type="button" value="8" onclick="addToInput('8')">
+                    <input type="button" value="9" onclick="addToInput('9')">
+                    <input type="button" value="*" onclick="addToInput('*')">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="addToInput('4')">
+                    <input type="button" value="5" onclick="addToInput('5')">
+                    <input type="button" value="6" onclick="addToInput('6')">
+                    <input type="button" value="-" onclick="addToInput('-')">
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="addToInput('1')">
+                    <input type="button" value="2" onclick="addToInput('2')">
+                    <input type="button" value="3" onclick="addToInput('3')">
+                    <input type="button" value="+" onclick="addToInput('+')">
+                </div>
+                <div>
+                    <input type="button" value="00" onclick="addToInput('00')">
+                    <input type="button" value="0" onclick="addToInput('0')">
+                    <input type="button" value="=" onclick="solve()" style="width: 100px; background-color: #FFEB3B; color: black; font-size: 20px;">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function addToInput(val) {
+            document.getElementById("input").value += val;
+        }
+        function finish(){
+            document.getElementById("input").value="";
+        }
+   function solve() {
+           let y= document.getElementById("input").value;
+           let x=eval(y);
+           document.getElementById("input").value=x;
+        }
+      function deleteLast() {
+    var currentInput = document.getElementById("input").value;
+    document.getElementById("input").value = currentInput.slice(0, -1); 
+}
+    </script>
+</body>
+</html>
