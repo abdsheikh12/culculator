@@ -6,6 +6,7 @@
     <title>Calculator</title>
     <link rel="icon" href="Calculator_512.webp" type="image/png">
     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="main.json">
 </head>
 <body>
     <div class="culcul">
@@ -64,6 +65,28 @@
     var currentInput = document.getElementById("input").value;
     document.getElementById("input").value = currentInput.slice(0, -1); 
 }
+        self.addEventListener('install', function (event) {
+  event.waitUntil(
+    caches.open('calculator-cache-v1').then(function (cache) {
+      return cache.addAll([
+        './',
+        './index.html',
+        './style.css',
+        './app.js',
+        './Calculator_512.webp'
+      ]);
+    })
+  );
+});
+
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches.match(event.request).then(function (response) {
+      return response || fetch(event.request);
+    })
+  );
+});
+
     </script>
 </body>
 </html>
