@@ -6,8 +6,9 @@
     <title>Calculator</title>
     <link rel="icon" href="Calculator_512.webp" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <meta name="theme-color" content="#FFEB3B">
-  <link rel="manifest" href="manifest.json">
+   <link rel="manifest" href="mainfest.json" >
+<meta name="theme-color" content="#FFEB3B">
+
 </head>
 <body>
     <div class="culcul">
@@ -67,19 +68,16 @@
     document.getElementById("input").value = currentInput.slice(0, -1); 
 }
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-    .then(function(registration) {
-      console.log('Service Worker registered with scope:', registration.scope);
-    })
-    .catch(function(error) {
-      console.log('Service Worker registration failed:', error);
-    });
-}
-
-
 
 
     </script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(() => console.log('Service Worker Registered'))
+      .catch(error => console.error('Service Worker registration failed:', error));
+  }
+</script>
+
 </body>
 </html>
